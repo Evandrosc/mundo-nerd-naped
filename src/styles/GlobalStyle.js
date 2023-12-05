@@ -1,10 +1,16 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 62.5%;
+  }
+
   * {
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
+    text-decoration: none;
   }
 
   body {
@@ -13,7 +19,11 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.dark10};
   }
 
-  h1, h2, h3, span {
+  h1, h2, h3, span, button {
     font-family: ${props => props.theme.lexendDeca};
+  }
+
+  p, a {
+    font-family: ${props => props.theme.inter};
   }
 `
