@@ -1,8 +1,12 @@
+import { GlobalStyle } from './styles/GlobalStyle'
+import { ThemeProvider } from 'styled-components'
+import { defaultTheme } from './styles/themes/default'
+
 export function App() {
 
   return (
-    <>
-      <h1>mundo-nerd-naped</h1>
-    </>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
