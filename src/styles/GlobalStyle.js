@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${props => props.theme.lexendDeca};
   }
 
-  p, a {
+  p, a, time {
     font-family: ${props => props.theme.inter};
   }
 
