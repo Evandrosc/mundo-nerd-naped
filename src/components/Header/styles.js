@@ -43,6 +43,7 @@ export const NavContainer = styled.nav`
     color: ${props => props.theme.dark40};
     font-size: 1.6rem;
     border-bottom: 2px solid transparent;
+    font-weight: 500;
 
     &.active {
       border-bottom-color: ${props => props.theme.brandColor};
