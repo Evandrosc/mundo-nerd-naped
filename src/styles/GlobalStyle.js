@@ -14,16 +14,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    max-width: 1119px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 5.269vw;
     background-color: ${props => props.theme.dark10};
   }
 
-  h1, h2, h3, span, button {
+  h1, h2, h3, span {
     font-family: ${props => props.theme.lexendDeca};
   }
 
-  p, a, time {
+  p, a, time, small {
     font-family: ${props => props.theme.inter};
   }
 

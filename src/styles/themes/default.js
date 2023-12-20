@@ -5,6 +5,7 @@ export const defaultTheme = {
   dark20:'#282830',
   dark30: '#C4C4C4',
   dark40: '#FEFBFB',
+  error: '#F03D3D',
   lexendDeca: '"Lexend Deca", sans-serif',
   inter: '"Inter", sans-serif',
 }
