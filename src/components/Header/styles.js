@@ -62,6 +62,8 @@ export const Button = styled.button`
   border: 3px solid ${props => props.theme.brandColor};
   border-radius: 3rem;
 
+  font-family: ${props => props.theme.lexendDeca};
+
   padding: .5rem 2rem;
 
   font-size: 1.4rem;

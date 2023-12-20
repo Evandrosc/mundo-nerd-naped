@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { MenuIcon } from './MenuIcon';
 import { Button, HeaderContainer, NavContainer } from './styles'
+import { NavLink } from 'react-router-dom';
 
 export function Header() {
   const [activeNavbar, setActiveNavbar] = useState(false)
-  const windthDisplay = window.outerWidth
+  const widthDisplay = window.outerWidth
 
  
 
@@ -16,17 +17,17 @@ export function Header() {
         <span>Naped</span>
         <div>
           <NavContainer $active={activeNavbar ? true : false}>
-            <a href="" className='active'>Home</a>
-            <a href="">Séries</a>
-            <a href="">Filmes</a>
-            <a href="">Animes</a>
-            <a href="">Games</a>
+            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/Séries'>Séries</NavLink>
+            <NavLink to='/Filmes'>Filmes</NavLink>
+            <NavLink to='/Animes'>Animes</NavLink>
+            <NavLink to='/Games'>Games</NavLink>
           </NavContainer>
-          {windthDisplay > 768 && btnAccount}
+          {widthDisplay > 768 && btnAccount}
           <MenuIcon activeNavbar={activeNavbar} onActiveNavbar={setActiveNavbar} />
         </div>
       </HeaderContainer>
-      {windthDisplay <= 768 && btnAccount}
+      {widthDisplay <= 768 && btnAccount}
     </header>
   );
 }
