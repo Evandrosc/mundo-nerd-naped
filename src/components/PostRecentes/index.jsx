@@ -13,7 +13,7 @@ export function PostRecentes() {
         {data.recentes.map(post => (
           <Link to={`/${post.genero}/${post.key}`} key={post.key}>
             <span>{post.genero}</span>
-            <img src={post.img} alt="" />
+            <img src={`../../../public/image/${post.img}.png`} alt="" />
             <h3>
               {post.titulo}
             </h3>
