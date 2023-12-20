@@ -1,0 +1,25 @@
+import { useGetPosts } from '../../hooks/useGetPosts'
+import { PostsRecentesContainer } from './styles'
+import { Link } from 'react-router-dom'
+
+export function PostRecentes() {
+
+  const { data } = useGetPosts()
+
+  return (
+    <PostsRecentesContainer>
+      <h2>Notícias mais recentes</h2>
+      <div>
+        {data.recentes.map(post => (
+          <Link to={`/${post.genero}/${post.key}`} key={post.key}>
+            <span>{post.genero}</span>
+            <img src={post.img} alt="" />
+            <h3>
+              {post.titulo}
+            </h3>
+          </Link>
+        ))}
+      </div>
+    </PostsRecentesContainer>
+  )
+}
