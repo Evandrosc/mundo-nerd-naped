@@ -24,7 +24,7 @@ export function Home() {
       <SectionPostsDestaque>
         <Link to={`/${data.destaque.principal[0].genero}/${data.destaque.principal[0].key}`}>
           <span>{data.destaque.principal[0].genero}</span>
-          <img src={`/image/${data.destaque.principal[0].img}.png`} alt="" />
+          <img src={data.destaque.principal[0].img} alt="" />
           <h3>
             {data.destaque.principal[0].titulo}
           </h3>
@@ -33,7 +33,7 @@ export function Home() {
           {data.destaque.secundario.map(post => (
             <Link to={`/${post.genero}/${post.key}`} key={post.key}>
               <span>{post.genero}</span>
-              <img src={`/image/${post.img}.png`} alt="" />
+              <img src={post.img} alt="" />
               <h3>
                 {post.titulo}
               </h3>
@@ -48,7 +48,7 @@ export function Home() {
             <PostsPrincipaisContainer key={post.key}>
               <div>
                 <span>{post.genero}</span>
-                <img src={`/image/${post.img}.png`} alt="" />
+                <img src={post.img} alt="" />
               </div>
               <div>
                 <h3>
@@ -69,7 +69,7 @@ export function Home() {
             {data.principais.secundario.map(post => (
               <Link to={`/${post.genero}/${post.key}`} key={post.key}>
                 <span>{post.genero}</span>
-                <img src={`/image/${post.img}.png`} alt="" />
+                <img src={post.img} alt="" />
                 <h3>
                   {post.titulo}
                 </h3>
