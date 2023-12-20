@@ -28,15 +28,15 @@ export const NavContainer = styled.nav`
     flex-direction: column;
 
     position: fixed;
-    top: 0;
+    z-index: 1;
+    top: 6.3rem;
     left: 50%;
     transform: translate(-50%);
-    padding-top: 6rem;
+    padding: 1.5rem 0;
 
     background-color: ${props => props.theme.dark10};
-
     width: 100%;
-    height: 100vh;
+    
   }
 
   a {
