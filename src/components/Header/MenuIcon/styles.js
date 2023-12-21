@@ -4,7 +4,7 @@ export const MenuIconContainer = styled.div`
   display: none;
   cursor: pointer;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     display: block;
   }
 

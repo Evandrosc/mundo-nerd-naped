@@ -1,15 +1,28 @@
-import { useState } from 'react';
-import { MenuIcon } from './MenuIcon';
+import { useState, useEffect } from 'react'
+import { MenuIcon } from './MenuIcon'
 import { Button, HeaderContainer, NavContainer } from './styles'
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 export function Header() {
   const [activeNavbar, setActiveNavbar] = useState(false)
-  const widthDisplay = window.outerWidth
+  const [widthDisplay, setWidthDisplay] = useState(window.outerWidth)
 
- 
+  function handleResize () {
+    setWidthDisplay(window.outerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+
 
   const btnAccount = <Button type='button'>Minha conta</Button>
+  const maxMobileWidthDisplay = 950
 
   return (
     <header>
@@ -23,11 +36,11 @@ export function Header() {
             <NavLink to='/Animes'>Animes</NavLink>
             <NavLink to='/Games'>Games</NavLink>
           </NavContainer>
-          {widthDisplay > 768 && btnAccount}
+          {widthDisplay >= maxMobileWidthDisplay && btnAccount}
           <MenuIcon activeNavbar={activeNavbar} onActiveNavbar={setActiveNavbar} />
         </div>
       </HeaderContainer>
-      {widthDisplay <= 768 && btnAccount}
+      {widthDisplay < maxMobileWidthDisplay && btnAccount}
     </header>
-  );
+  )
 }

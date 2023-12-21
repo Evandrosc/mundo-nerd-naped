@@ -23,7 +23,7 @@ export const NavContainer = styled.nav`
   align-items: center;
   gap: 6rem;
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     display: ${props => props.$active ? 'flex' : 'none'};
     flex-direction: column;
 
@@ -70,7 +70,9 @@ export const Button = styled.button`
 
   cursor: pointer;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     width: 100%;
+    height: 3.4rem;
+    margin-top: 3.2rem;
   }
 `
