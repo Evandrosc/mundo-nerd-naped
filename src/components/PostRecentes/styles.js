@@ -5,7 +5,7 @@ export const PostsRecentesContainer = styled.section`
 
   h2 {
     color: ${props => props.theme.dark40};
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
     font-weight: 400;
     line-height: 4rem;
     margin-bottom: 3.9rem;
@@ -15,9 +15,8 @@ export const PostsRecentesContainer = styled.section`
       background-color: ${props => props.theme.brandColor};
       
       display: block;
-
-      width: 47%;
-      min-width: 19rem;
+      width: 58%;
+      min-width: 18.8rem;
       max-width: 25rem;
       height: .3rem;
     }
