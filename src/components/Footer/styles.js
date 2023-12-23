@@ -9,6 +9,10 @@ export const FooterContainer = styled.footer`
 
   margin-top: 9.5rem;
 
+  @media screen and (max-width: 950px) {
+        margin-top: 4rem;
+  }
+
 
   span {
     color: ${props => props.theme.brandColor};
