@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { MenuIcon } from './MenuIcon'
 import { Button, HeaderContainer, NavContainer } from './styles'
-import { NavLink } from 'react-router-dom'
+import { Navlink } from './Navlink'
 
 export function Header() {
   const [activeNavbar, setActiveNavbar] = useState(false)
@@ -21,6 +21,9 @@ export function Header() {
 
 
 
+const navlinkDesktop = <Navlink />
+const navlinkMobile = <Navlink isMobile onCloseNavbar={setActiveNavbar} />
+
   const btnAccount = <Button type='button'>Minha conta</Button>
   const maxMobileWidthDisplay = 950
 
@@ -30,11 +33,7 @@ export function Header() {
         <span>Naped</span>
         <div>
           <NavContainer $active={activeNavbar ? true : false}>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/Séries'>Séries</NavLink>
-            <NavLink to='/Filmes'>Filmes</NavLink>
-            <NavLink to='/Animes'>Animes</NavLink>
-            <NavLink to='/Games'>Games</NavLink>
+            {widthDisplay >= maxMobileWidthDisplay ? navlinkDesktop : navlinkMobile}
           </NavContainer>
           {widthDisplay >= maxMobileWidthDisplay && btnAccount}
           <MenuIcon activeNavbar={activeNavbar} onActiveNavbar={setActiveNavbar} />
