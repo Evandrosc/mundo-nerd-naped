@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const MainContainer = styled.main`
   position: relative;
-  min-height: 60dvh;
+  min-height: calc(65dvh - 13rem);
 `
 
 export const Loader = styled.div`
