@@ -2,14 +2,13 @@ import styled from 'styled-components'
 
 export const MainContainer = styled.main`
   position: relative;
-  min-height: 60vh;
+  min-height: 60dvh;
 `
 
 export const Loader = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 100%;
 
   transform: translateX(-50%);
 

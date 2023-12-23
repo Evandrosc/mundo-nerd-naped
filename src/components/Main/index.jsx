@@ -8,11 +8,9 @@ export function Main() {
 
   const {isLoading } = useGetPosts()
 
-  if (isLoading) return <Loader><div></div></Loader>
-
   return (
     <MainContainer>
-      {<Outlet />}
+      {isLoading ? <Loader><div></div></Loader> : <Outlet />}
     </MainContainer>
   )
 }
