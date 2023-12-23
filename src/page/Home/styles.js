@@ -6,9 +6,14 @@ export const SectionContainer = styled.section`
   margin-top: 11.4rem;
   margin-bottom: 8rem;
 
+  @media screen and (max-width: 950px) {
+    margin-top: 4.8rem;
+    margin-bottom: 3.2rem;
+  }
+
   h1 {
     color: ${props => props.theme.dark40};
-    font-size: clamp(2.4rem, 6vw, 4.8rem);
+    font-size: clamp(2.4rem, 6.2vw, 4.8rem);
     font-weight: 400;
     max-width: 30.3rem;
     margin-bottom: 1.1rem;
@@ -16,7 +21,7 @@ export const SectionContainer = styled.section`
 
   p {
     color: ${props => props.theme.dark30};
-    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-size: clamp(1.4rem, 4.2vw, 2rem);
     font-weight: 500;
     line-height: min(140%, 3.2rem);
   }
@@ -136,6 +141,10 @@ export const SectionPostsPrincipal = styled.section`
   
   margin-top: 5rem;
   margin-bottom: 9.9rem;
+
+  @media screen and (max-width: 950px) {
+    margin: 4.8rem 0;
+  }
 
   section {
     width: 100%;
