@@ -1,24 +1,44 @@
 import styled from 'styled-components'
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin-top: 2.6rem;
 
-  span {
-    color: ${props => props.theme.brandColor};
-    font-size: 2.4rem;
-  }
-
-  > div {
-    display: flex;
-    align-items: center;
-    gap: 8.4rem;
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
   }
 `
 
-export const NavContainer = styled.nav`
+export const NavbarContainer = styled.div`
+  display: flex;
+  gap: 6rem;
+
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+    gap: 0;
+
+    width: 100%;
+  }
+`
+
+export const Navigation = styled.div`
+
+  @media screen and (max-width: 950px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  a {
+    color: ${props => props.theme.brandColor};
+    font-size: 2.4rem;
+  }
+`
+
+export const Navbar = styled.nav`
   display: flex;
   align-items: center;
   gap: 6rem;
@@ -26,12 +46,6 @@ export const NavContainer = styled.nav`
   @media screen and (max-width: 950px) {
     display: ${props => props.$active ? 'flex' : 'none'};
     flex-direction: column;
-
-    position: fixed;
-    z-index: 1;
-    top: 6.3rem;
-    left: 50%;
-    transform: translate(-50%);
     padding: 1.5rem 0;
 
     background-color: ${props => props.theme.dark10};
