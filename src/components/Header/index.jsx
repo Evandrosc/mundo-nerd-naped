@@ -19,7 +19,7 @@ export function Header() {
     }
   }, [])
 
-  function handlePage() {
+  function handleCloseNavbar() {
     if (widthDisplay < maxMobileWidthDisplay && activeNavbar) {
       setActiveNavbar(value => !value)
     }
@@ -35,11 +35,11 @@ export function Header() {
         <span>Naped</span>
         <div>
           <NavContainer $active={activeNavbar ? true : false}>
-            <NavLink to='/' onClick={handlePage}>Home</NavLink>
-            <NavLink to='/Séries' onClick={handlePage}>Séries</NavLink>
-            <NavLink to='/Filmes' onClick={handlePage}>Filmes</NavLink>
-            <NavLink to='/Animes' onClick={handlePage}>Animes</NavLink>
-            <NavLink to='/Games' onClick={handlePage}>Games</NavLink>
+            <NavLink to='/' onClick={handleCloseNavbar}>Home</NavLink>
+            <NavLink to='/Séries' onClick={handleCloseNavbar}>Séries</NavLink>
+            <NavLink to='/Filmes' onClick={handleCloseNavbar}>Filmes</NavLink>
+            <NavLink to='/Animes' onClick={handleCloseNavbar}>Animes</NavLink>
+            <NavLink to='/Games' onClick={handleCloseNavbar}>Games</NavLink>
           </NavContainer>
           {widthDisplay >= maxMobileWidthDisplay && btnAccount}
           <MenuIcon activeNavbar={activeNavbar} onActiveNavbar={setActiveNavbar} />
