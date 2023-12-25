@@ -5,10 +5,10 @@ import { NavLink } from 'react-router-dom'
 
 export function Header() {
   const [activeNavbar, setActiveNavbar] = useState(false)
-  const [widthDisplay, setWidthDisplay] = useState(window.outerWidth)
+  const [widthDisplay, setWidthDisplay] = useState(window.innerWidth)
 
-  function handleResize () {
-    setWidthDisplay(window.outerWidth)
+  function handleResize() {
+    setWidthDisplay(window.innerWidth)
   }
 
   useEffect(() => {
