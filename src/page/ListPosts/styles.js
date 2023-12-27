@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { LinearGradient } from '../../styles/Variaveis';
+import { LinearGradient } from '../../styles/Variaveis'
 
 
-export const Section = styled.section`
+export const SectionTop = styled.section`
   width: 100%;
   height: 30rem;
 
@@ -29,48 +29,57 @@ export const Section = styled.section`
   div {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 4.5rem;
     transform: translateY(-50%);
-    max-width: 492px;
-    margin-left: 4rem;
+    max-width: 49.2rem;
 
     @media screen and (max-width: 768px) {
       transform: translateY(0);
       top: auto;
+      left: 1.6rem;
       bottom: 1.8rem;
     }
     
     h1 {
       font-size: clamp(2.4rem, 5.5vw, 4.8rem);
       font-weight: 400;
+      margin-bottom: 1.5rem;
       color: ${props => props.theme.dark40};
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 1.2rem;
+      }
     }
 
     p {
-      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-size: clamp(1.2rem, 3.7vw, 2rem);
       font-weight: 500;
       color: ${props => props.theme.dark30};
-      line-height: clamp(1.4rem, 3.5vw, 3.2rem);
+      line-height: clamp(1.4rem, 4.2vw, 3.2rem);
     }
   }
-`;
+`
 
 export const FormFilterPost = styled.form`
   display: flex;
 
   input {
     width: 100%;
-    height: 6rem;
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 4vw, 2rem);
     background-color: ${props => props.theme.dark20};
     color: ${props => props.theme.dark30};
     border: none;
     outline: none;
-    padding: 0 2rem;
+    padding: 1.7rem 2.5rem;
+
+    @media screen and (max-width: 482px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
 
     &::placeholder {
       color: #989898;
-      font-size: 2rem;
+      font-size: clamp(1.3rem, 4vw, 2rem);
     }
 
     &::-webkit-search-cancel-button {
@@ -82,6 +91,15 @@ export const FormFilterPost = styled.form`
     background-color: ${props => props.theme.dark20};
     padding-right: 1rem;
     cursor: pointer;
+  }
+
+  svg {
+    display: block;
+
+    @media screen and (max-width: 482px) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
   
   svg:hover path {
@@ -120,7 +138,7 @@ export const ContainerPosts = styled.div`
       object-fit: cover;
     }
   }
-`;
+`
 
 export const Genero = styled.span`
   position: absolute;
@@ -134,7 +152,7 @@ export const Genero = styled.span`
   margin-top: 1.6rem;
   margin-left: 1.6rem;
   border-radius: 3px;
-`;
+`
 
 export const Titulo = styled.h3`
   position: absolute;
@@ -146,7 +164,7 @@ export const Titulo = styled.h3`
   width: 90%;
   margin-left: 1.6rem;
   margin-bottom: 1.6rem;
-`;
+`
 
 export const Error = styled.small`
   color: ${props => props.theme.error};

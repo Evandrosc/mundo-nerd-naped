@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ContainerPosts, Genero, Section, FormFilterPost, Titulo, Error } from './styles'
+import { ContainerPosts, Genero, SectionTop, FormFilterPost, Titulo, Error } from './styles'
 import { Link } from 'react-router-dom'
 import { btnSearch } from '../../assets/search'
 import { Pagination } from '../../components/Pagination'
@@ -76,13 +76,13 @@ export function ListPosts({ gender }) {
 
   return (
     <>
-      <Section>
+      <SectionTop>
         <img src={listPosts[0].img} alt="" />
         <div>
           <h1>{gender}</h1>
           <p>O Naped pode ser sua fonte de informações sobre o mundo nerd e outros assuntos relacionados.</p>
         </div>
-      </Section>
+      </SectionTop>
       <FormFilterPost onSubmit={handleSubmit}>
         <input
           type='search'
