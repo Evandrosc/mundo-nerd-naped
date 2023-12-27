@@ -86,7 +86,7 @@ export const Button = styled.button`
 
   @media screen and (max-width: 950px) {
     width: 100%;
-    height: 3.4rem;
+    line-height: 3.4rem;
     margin-top: 3.2rem;
   }
 `
