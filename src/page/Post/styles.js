@@ -2,25 +2,29 @@ import styled from 'styled-components'
 
 export const Titulo = styled.h1`
   color: ${props => props.theme.white};
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
   font-weight: 400;
+
+  margin-top: 8.9rem;
+  margin-bottom: 1.2rem;
 
   @media screen and (min-width: 1024px) {
     line-height: 5.5rem;
   }
 
-  margin-top: 8.9rem;
-  margin-bottom: 1.2rem;
+  @media screen and (max-width: 482px) {
+    margin-top: 4.8rem;
+  }
 `
 export const Paragrafo = styled.p`
   color: ${props => props.theme.dark30};
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
   font-weight: 500;  
 `
 
 export const Time = styled.time`
   color: ${props => props.theme.dark30};
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
   
   @media screen and (min-width: 769px) {
     line-height: 5.5rem;
@@ -68,7 +72,7 @@ export const ImgContainer = styled.div`
 
 export const Conteudo = styled.p`
   color: ${props => props.theme.dark30};
-  font-size: clamp(1.4rem, 2vw, 2.4rem);
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
 
   line-height: 140%;
 
