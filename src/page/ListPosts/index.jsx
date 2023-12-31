@@ -13,49 +13,40 @@ export function ListPosts({ gender }) {
   const [postNotFound, setPostNotFound] = useState(false)
   const [offset, setOffset] = useState(0)
   const [genrePrevious, setGenrePrevious] = useState(gender)
-  
+
   useEffect(() => {
-    updateGenre()
-
-    updateDisplayedPosts()
-
-    if (postNotFound) {
-      setPostNotFound(false)
-    }
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gender, offset])
-
-  function updateGenre() {
     if (gender !== genrePrevious) {
       setOffset(0)
       setGenrePrevious(gender)
     }
-  }
 
-  function updateDisplayedPosts() {
-    const filterDisplayedPosts = listPosts.slice(offset, offset + maxPost)
-    setPostsDisplayed(filterDisplayedPosts)
-  }
+    if (postNotFound) {
+      setPostNotFound(false)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gender])
+
+  useEffect(() => 
+    setPostsDisplayed(listPosts.slice(offset, offset + maxPost)), [gender, listPosts, offset])
 
   function handleSubmit(e) {
     e.preventDefault()
     const value = e.target.search.value.toLowerCase()
 
     if (value) {
-      const posts = listPosts.filter(post => post.titulo.toLowerCase().includes(value))
+      const filteredPosts = listPosts.filter(post => post.titulo.toLowerCase().includes(value))
 
-      if (!posts.length) {
+      if (!filteredPosts.length) {
         setPostNotFound(true)
         e.target.reset()
         return
       }
 
-      if (postNotFound && posts.length) {
+      if (postNotFound && filteredPosts.length) {
         setPostNotFound(false)
       }
 
-      setPostsDisplayed(posts)
+      setPostsDisplayed(filteredPosts)
       e.target.reset()
       return
     }
@@ -64,9 +55,9 @@ export function ListPosts({ gender }) {
       setPostNotFound(false)
     }
 
-    const posts = listPosts.slice(offset, offset + maxPost)
+    const postsPagination = listPosts.slice(offset, offset + maxPost)
 
-    setPostsDisplayed(posts)
+    setPostsDisplayed(postsPagination)
 
     e.target.reset()
   }
@@ -88,21 +79,21 @@ export function ListPosts({ gender }) {
           name='search'
           placeholder='Quer ajuda na procura? Pesquise aqui'
         />
-        <button 
-          type='submit' 
+        <button
+          type='submit'
           title='pesquisar post'
         >
           {btnSearch}
         </button>
       </FormFilterPost>
       {postNotFound && <Error>Notícia não encontrada</Error>}
-      <ContainerPosts 
-        tabIndex={0} 
+      <ContainerPosts
+        tabIndex={0}
         aria-label={postNotFound ? 'Nenhuma notícia referente ao filtro encontrada' : 'Lista de notícias'}
       >
         {postsDisplayed.map(post => (
-          <Link 
-            key={post.key} 
+          <Link
+            key={post.key}
             to={`/${post.genero}/${post.key}`}
           >
             <Genero aria-label={`Gênero: ${post.genero}.`}>
