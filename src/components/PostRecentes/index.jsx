@@ -8,11 +8,11 @@ export function PostRecentes() {
 
   return (
     <PostsRecentesContainer>
-      <h2>Notícias mais recentes</h2>
+      <h2 tabIndex={0}>Notícias mais recentes</h2>
       <div>
         {data.recentes.map(post => (
           <Link to={`/${post.genero}/${post.key}`} key={post.key}>
-            <span>{post.genero}</span>
+            <span aria-label={`Gênero: ${post.genero}.`}>{post.genero}</span>
             <img src={post.img} alt="" />
             <h3>
               {post.titulo}

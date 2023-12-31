@@ -28,9 +28,9 @@ export function Header() {
   }
 
   return (
-    <HeaderContainer>
+    <HeaderContainer tabIndex={0}>
       <Navigation>
-        <NavLink to='/'>Naped</NavLink>
+        <NavLink to='/' tabIndex={-1}>Naped</NavLink>
         <MenuIcon activeNavbar={activeNavbar} onActiveNavbar={setActiveNavbar} />
       </Navigation>
       <NavbarContainer>

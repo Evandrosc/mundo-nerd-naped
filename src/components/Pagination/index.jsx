@@ -24,10 +24,11 @@ export function Pagination({
   }
 
   return (
-    <SectionContainer>
+    <SectionContainer tabIndex={0} aria-label='Paginação'>
       <Button
         onClick={() => onPageChange(current - 1)}
         disabled={current === 1}
+        aria-label='Voltar para notícias anteriores'
       >
         {btnPrevPosts}
       </Button>
@@ -45,6 +46,7 @@ export function Pagination({
       <Button
         onClick={() => onPageChange(current + 1)}
         disabled={current === pages}
+        aria-label='Ir para próximas notícias'
       >
         {btnNextPosts}
       </Button>

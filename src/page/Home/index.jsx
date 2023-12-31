@@ -23,7 +23,11 @@ export function Home() {
 
       <SectionPostsDestaque>
         <Link to={`/${data.destaque.principal[0].genero}/${data.destaque.principal[0].key}`}>
-          <span>{data.destaque.principal[0].genero}</span>
+          <span 
+            aria-label={`Gênero: ${data.destaque.principal[0].genero}.`}
+          >
+            {data.destaque.principal[0].genero}
+          </span>
           <img src={data.destaque.principal[0].img} alt="" />
           <h3>
             {data.destaque.principal[0].titulo}
@@ -32,7 +36,7 @@ export function Home() {
         <aside>
           {data.destaque.secundario.map(post => (
             <Link to={`/${post.genero}/${post.key}`} key={post.key}>
-              <span>{post.genero}</span>
+              <span aria-label={`Gênero: ${post.genero}.`}>{post.genero}</span>
               <img src={post.img} alt="" />
               <h3>
                 {post.titulo}
@@ -45,9 +49,9 @@ export function Home() {
       <SectionPostsPrincipal>
         <section>
           {data.principais.principal.map(post => (
-            <PostsPrincipaisContainer key={post.key}>
+            <PostsPrincipaisContainer tabIndex={0} key={post.key}>
               <div>
-                <span>{post.genero}</span>
+                <span aria-label={`Gênero: ${post.genero}.`}>{post.genero}</span>
                 <img src={post.img} alt="" />
               </div>
               <div>
@@ -64,11 +68,11 @@ export function Home() {
           ))}
         </section>
         <aside>
-          <h2>Veja mais</h2>
+          <h2 tabIndex={0}>Veja mais</h2>
           <div>
             {data.principais.secundario.map(post => (
               <Link to={`/${post.genero}/${post.key}`} key={post.key}>
-                <span>{post.genero}</span>
+                <span aria-label={`Gênero: ${post.genero}.`}>{post.genero}</span>
                 <img src={post.img} alt="" />
                 <h3>
                   {post.titulo}

@@ -13,19 +13,7 @@ export function ListPosts({ gender }) {
   const [postNotFound, setPostNotFound] = useState(false)
   const [offset, setOffset] = useState(0)
   const [genrePrevious, setGenrePrevious] = useState(gender)
-
-  function updateGenre() {
-    if (gender !== genrePrevious) {
-      setOffset(0)
-      setGenrePrevious(gender)
-    }
-  }
-
-  function updateDisplayedPosts() {
-    const filterDisplayedPosts = listPosts.slice(offset, offset + maxPost)
-    setPostsDisplayed(filterDisplayedPosts)
-  }
-
+  
   useEffect(() => {
     updateGenre()
 
@@ -38,6 +26,17 @@ export function ListPosts({ gender }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gender, offset])
 
+  function updateGenre() {
+    if (gender !== genrePrevious) {
+      setOffset(0)
+      setGenrePrevious(gender)
+    }
+  }
+
+  function updateDisplayedPosts() {
+    const filterDisplayedPosts = listPosts.slice(offset, offset + maxPost)
+    setPostsDisplayed(filterDisplayedPosts)
+  }
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -89,13 +88,26 @@ export function ListPosts({ gender }) {
           name='search'
           placeholder='Quer ajuda na procura? Pesquise aqui'
         />
-        <button type='submit' title='pesquisar post'>{btnSearch}</button>
+        <button 
+          type='submit' 
+          title='pesquisar post'
+        >
+          {btnSearch}
+        </button>
       </FormFilterPost>
       {postNotFound && <Error>Notícia não encontrada</Error>}
-      <ContainerPosts>
+      <ContainerPosts 
+        tabIndex={0} 
+        aria-label={postNotFound ? 'Nenhuma notícia referente ao filtro encontrada' : 'Lista de notícias'}
+      >
         {postsDisplayed.map(post => (
-          <Link key={post.key} to={`/${post.genero}/${post.key}`}>
-            <Genero>{post.genero}</Genero>
+          <Link 
+            key={post.key} 
+            to={`/${post.genero}/${post.key}`}
+          >
+            <Genero aria-label={`Gênero: ${post.genero}.`}>
+              {post.genero}
+            </Genero>
             <img src={post.img} alt="" />
             <Titulo>{post.titulo}</Titulo>
           </Link>

@@ -14,16 +14,16 @@ export function Post() {
 
   return (
     <>
-      <Titulo>{titulo}</Titulo>
-      <Paragrafo>{resumo}</Paragrafo>
-      <Time dateTime={`${data.ano}-${data.mes}-${data.dia}`}>{data.dia}/{data.mes}/{data.ano}</Time>
+      <Titulo tabIndex={0}>{titulo}</Titulo>
+      <Paragrafo tabIndex={0}>{resumo}</Paragrafo>
+      <Time tabIndex={0} dateTime={`${data.ano}-${data.mes}-${data.dia}`}>{data.dia}/{data.mes}/{data.ano}</Time>
 
       <ImgContainer>
         <span>{genero}</span>
         <img src={img} alt="" />
       </ImgContainer>
 
-      <Conteudo>{conteudo}</Conteudo>
+      <Conteudo tabIndex={0}>{conteudo}</Conteudo>
 
       <PostRecentes />
     </>
