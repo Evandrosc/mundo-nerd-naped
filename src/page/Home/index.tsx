@@ -28,7 +28,12 @@ export function Home() {
           >
             {data?.destaque.principal[0].genero}
           </span>
-          <img src={data?.destaque.principal[0].img} alt="" />
+          <img 
+            srcSet={`${data?.destaque.principal[0].img}, 776w`} 
+            sizes="(max-width: 1024px) 100vw, 776px" 
+            alt="" 
+            loading='eager'
+          />
           <h3>
             {data?.destaque.principal[0].titulo}
           </h3>
@@ -37,7 +42,7 @@ export function Home() {
           {data?.destaque.secundario.map(post => (
             <Link to={`/${post.genero}/${post.key}`} key={post.key}>
               <span aria-label={`Gênero: ${post.genero}.`}>{post.genero}</span>
-              <img src={post.img} alt="" />
+              <img src={post.img} alt="" width={338} height={165} loading='lazy' />
               <h3>
                 {post.titulo}
               </h3>
@@ -52,7 +57,11 @@ export function Home() {
             <PostsPrincipaisContainer tabIndex={0} key={post.key}>
               <div>
                 <span aria-label={`Gênero: ${post.genero}.`}>{post.genero}</span>
-                <img src={post.img} alt="" />
+                <img 
+                  srcSet={`${post.img}, 200w`} 
+                  sizes="(max-width: 768px) 144px, 200px" 
+                  loading='lazy' 
+                />
               </div>
               <div>
                 <h3>
@@ -73,7 +82,7 @@ export function Home() {
             {data?.principais.secundario.map(post => (
               <Link to={`/${post.genero}/${post.key}`} key={post.key}>
                 <span aria-label={`Gênero: ${post.genero}.`}>{post.genero}</span>
-                <img src={post.img} alt="" />
+                <img src={post.img} alt="" width={338} height={250} loading='lazy' />
                 <h3>
                   {post.titulo}
                 </h3>

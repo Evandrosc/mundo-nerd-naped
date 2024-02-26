@@ -15,7 +15,7 @@ export function PostRecentes() {
         {data?.recentes.map((post: Post) => (
           <Link to={`/${post.genero}/${post.key}`} key={post.key}>
             <span aria-label={`Gênero: ${post.genero}.`}>{post.genero}</span>
-            <img src={post.img} alt="" />
+            <img src={post.img} alt="" width={344} height={250} loading='lazy' />
             <h3>
               {post.titulo}
             </h3>
