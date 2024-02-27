@@ -21,7 +21,12 @@ export function Post() {
 
       <ImgContainer>
         <span>{post?.genero}</span>
-        <img src={post?.img} alt="" />
+        <img 
+          srcSet={`${post?.img}, 1121w`} 
+          loading='eager'
+          sizes="100vw"
+          alt="" 
+        />
       </ImgContainer>
 
       <Conteudo tabIndex={0}>{post?.conteudo}</Conteudo>
